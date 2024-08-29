@@ -60,7 +60,7 @@ const SigninForm = () => {
           Log in to your account
         </h2>
         <p className="text-light-3 small-medium md:base-regular mt-2">
-          Welcome back! Please enter your details.
+          Welcome back! Please enter your details
         </p>
         <form
           onSubmit={form.handleSubmit(handleSignin)}
