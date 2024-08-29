@@ -57,11 +57,11 @@ const SigninForm = () => {
         <img src="/assets/images/logo.svg" alt="logo" />
 
         <h2 className="h3-bold md:h2-bold pt-5 sm:pt-12">
-          Log in to your account
-        </h2>
-        <p className="text-light-3 small-medium md:base-regular mt-2">
-          Welcome back! Please enter your details
+        <p className="text-light-3 small-medium md:base-regular mt-2 text-center">
+          Bienvenido 🖐
         </p>
+          Ingresa a tu cuenta
+        </h2>
         <form
           onSubmit={form.handleSubmit(handleSignin)}
           className="flex flex-col gap-5 w-full mt-4">
@@ -96,19 +96,19 @@ const SigninForm = () => {
           <Button type="submit" className="shad-button_primary">
             {isLoading || isUserLoading ? (
               <div className="flex-center gap-2">
-                <Loader /> Loading...
+                <Loader /> Cargando...
               </div>
             ) : (
-              "Log in"
+              "Ingresar"
             )}
           </Button>
 
           <p className="text-small-regular text-light-2 text-center mt-2">
-            Don&apos;t have an account?
+            No tienes una cuenta?
             <Link
               to="/sign-up"
               className="text-primary-500 text-small-semibold ml-1">
-              Sign up
+              Registrate
             </Link>
           </p>
         </form>
