@@ -52,12 +52,12 @@ const FileUploader = ({ fieldChange, mediaUrl }: FileUploaderProps) => {
           />
 
           <h3 className="base-medium text-light-2 mb-2 mt-6">
-            Drag photo here
+            Arrastra tu foto aqui
           </h3>
           <p className="text-light-4 small-regular mb-6">SVG, PNG, JPG</p>
 
           <Button type="button" className="shad-button_dark_4">
-            Select from computer
+            Seleccionar desde tu equipo
           </Button>
         </div>
       )}

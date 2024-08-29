@@ -62,8 +62,6 @@ const Profile = () => {
 
             <div className="flex gap-8 mt-10 items-center justify-center xl:justify-start flex-wrap z-20">
               <StatBlock value={currentUser.posts.length} label="Posts" />
-              <StatBlock value={20} label="Followers" />
-              <StatBlock value={20} label="Following" />
             </div>
 
             <p className="small-medium md:base-medium text-center xl:text-left mt-7 max-w-screen-sm">
@@ -85,13 +83,13 @@ const Profile = () => {
                   height={20}
                 />
                 <p className="flex whitespace-nowrap small-medium">
-                  Edit Profile
+                  Editar Perfil
                 </p>
               </Link>
             </div>
             <div className={`${user.id === id && "hidden"}`}>
               <Button type="button" className="shad-button_primary px-8">
-                Follow
+                Seguir
               </Button>
             </div>
           </div>
@@ -124,7 +122,7 @@ const Profile = () => {
               width={20}
               height={20}
             />
-            Liked Posts
+            Me Gusta
           </Link>
         </div>
       )}

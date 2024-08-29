@@ -84,7 +84,7 @@ const UpdateProfile = () => {
             alt="edit"
             className="invert-white"
           />
-          <h2 className="h3-bold md:h2-bold text-left w-full">Edit Profile</h2>
+          <h2 className="h3-bold md:h2-bold text-left w-full">Editar Perfil</h2>
         </div>
 
         <Form {...form}>
@@ -112,7 +112,7 @@ const UpdateProfile = () => {
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="shad-form_label">Name</FormLabel>
+                  <FormLabel className="shad-form_label">Nombre</FormLabel>
                   <FormControl>
                     <Input type="text" className="shad-input" {...field} />
                   </FormControl>
@@ -188,7 +188,7 @@ const UpdateProfile = () => {
                 className="shad-button_primary whitespace-nowrap"
                 disabled={isLoadingUpdate}>
                 {isLoadingUpdate && <Loader />}
-                Update Profile
+                Actualizar Perfil
               </Button>
             </div>
           </form>
