@@ -38,7 +38,7 @@ const SignupForm = () => {
       const newUser = await createUserAccount(user);
 
       if (!newUser) {
-        toast({ title: "Sign up failed. Please try again.", });
+        toast({ title: "El registro fallo, intenta nuevamente.", });
         
         return;
       }
@@ -49,7 +49,7 @@ const SignupForm = () => {
       });
 
       if (!session) {
-        toast({ title: "Something went wrong. Please login your new account", });
+        toast({ title: "Algo salio mal, por favor inicia sesion nuevamente.", });
         
         navigate("/sign-in");
         
@@ -63,7 +63,7 @@ const SignupForm = () => {
 
         navigate("/");
       } else {
-        toast({ title: "Login failed. Please try again.", });
+        toast({ title: "El registro fallo, intenta nuevamente.", });
         
         return;
       }
@@ -120,7 +120,7 @@ const SignupForm = () => {
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="shad-form_label">Email</FormLabel>
+                <FormLabel className="shad-form_label">Correo</FormLabel>
                 <FormControl>
                   <Input type="text" className="shad-input" {...field} />
                 </FormControl>
@@ -134,7 +134,7 @@ const SignupForm = () => {
             name="password"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="shad-form_label">Password</FormLabel>
+                <FormLabel className="shad-form_label">Contraseña</FormLabel>
                 <FormControl>
                   <Input type="password" className="shad-input" {...field} />
                 </FormControl>
