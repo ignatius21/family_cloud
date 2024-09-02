@@ -87,7 +87,7 @@ const SigninForm = () => {
                       height={22}
                       className="absolute left-1 top-1/2 transform -translate-y-1/2"
                     />
-                    <Input type="text" className="rounded-2xl pl-9 shadow-md text-gray-600 border-none focus:outline-none" {...field} />
+                    <Input type="text" className="rounded-2xl pl-9 shadow-md text-gray-600 border-none" {...field} />
                   </div>
                 </FormControl>
                 <FormMessage />
