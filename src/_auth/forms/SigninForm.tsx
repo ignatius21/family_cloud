@@ -64,7 +64,7 @@ const SigninForm = () => {
         {/* <img src="/assets/images/logoFC.png" alt="logo" width={120} height={22}/> */}
 
         <h2 className="h3-bold md:h2-bold pt-5 sm:pt-12 text-gray-600">
-          <p className="text-light-3 small-medium md:base-regular mt-2 text-center">
+          <p className="text-gray-500 small-medium md:base-regular mt-2 text-center">
             Bienvenido 🖐
           </p>
           Ingresa a tu cuenta
@@ -77,7 +77,7 @@ const SigninForm = () => {
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className=" text-gray-600">Correo</FormLabel>
+                <FormLabel className=" text-gray-500">Correo</FormLabel>
                 <FormControl>
                   <div className="relative">
                     <img
@@ -100,7 +100,7 @@ const SigninForm = () => {
             name="password"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-gray-600">Contraseña</FormLabel>
+                <FormLabel className="text-gray-500">Contraseña</FormLabel>
                 <FormControl>
                   <div className="relative">
                     <img
@@ -132,7 +132,7 @@ const SigninForm = () => {
             )}
           </Button>
 
-          <p className="text-small-regular text-gray-600 text-center mt-2">
+          <p className="text-small-regular text-gray-500 text-center mt-2">
             No tienes una cuenta?
             <Link
               to="/sign-up"
