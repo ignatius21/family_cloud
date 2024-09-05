@@ -77,12 +77,12 @@ const SignupForm = () => {
       <div className="sm:w-420 flex-center flex-col">
         {/* <img src="/assets/images/logo.svg" alt="logo" /> */}
 
-        <h2 className="h3-bold md:h2-bold pt-5 sm:pt-12 text-gray-600">
+        <h2 className="h3-bold md:h2-bold mb-8 sm:pt-12 text-gray-600">
           Crea tu cuenta
         </h2>
-        <p className="text-gray-500 small-medium md:base-regular mt-2">
+        {/* <p className="text-gray-500 small-medium md:base-regular mt-2">
           Para usar CloudFamily necesitas una cuenta.
-        </p>
+        </p> */}
 
         <form
           onSubmit={form.handleSubmit(handleSignup)}
