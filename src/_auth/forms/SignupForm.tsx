@@ -75,13 +75,13 @@ const SignupForm = () => {
   return (
     <Form {...form}>
       <div className="sm:w-420 flex-center flex-col">
-        <img src="/assets/images/logo.svg" alt="logo" />
+        {/* <img src="/assets/images/logo.svg" alt="logo" /> */}
 
-        <h2 className="h3-bold md:h2-bold pt-5 sm:pt-12">
+        <h2 className="h3-bold md:h2-bold pt-5 sm:pt-12 text-gray-600">
           Crea tu cuenta
         </h2>
-        <p className="text-light-3 small-medium md:base-regular mt-2">
-          Para usar FamilyCloud necesitas una cuenta.
+        <p className="text-gray-500 small-medium md:base-regular mt-2">
+          Para usar CloudFamily necesitas una cuenta.
         </p>
 
         <form
@@ -92,9 +92,18 @@ const SignupForm = () => {
             name="name"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="shad-form_label">Nombre</FormLabel>
+                <FormLabel className=" text-gray-500">Nombre</FormLabel>
                 <FormControl>
-                  <Input type="text" className="shad-input" {...field} />
+                  <div className="relative">
+                    <img
+                      src="/assets/icons/user.svg"
+                      alt="email"
+                      width={22}
+                      height={22}
+                      className="absolute left-2 top-1/2 transform -translate-y-1/2"
+                    />
+                    <Input type="text" className="rounded-2xl pl-9 shadow-md text-gray-600 border-none" {...field} />
+                  </div>
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -106,9 +115,18 @@ const SignupForm = () => {
             name="username"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="shad-form_label">Usuario</FormLabel>
+                <FormLabel className=" text-gray-500">Usuario</FormLabel>
                 <FormControl>
-                  <Input type="text" className="shad-input" {...field} />
+                  <div className="relative">
+                    <img
+                      src="/assets/icons/user2.svg"
+                      alt="email"
+                      width={22}
+                      height={22}
+                      className="absolute left-2 top-1/2 transform -translate-y-1/2"
+                    />
+                    <Input type="text" className="rounded-2xl pl-9 shadow-md text-gray-600 border-none" {...field} />
+                  </div>
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -120,9 +138,18 @@ const SignupForm = () => {
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="shad-form_label">Correo</FormLabel>
+                <FormLabel className=" text-gray-500">Correo</FormLabel>
                 <FormControl>
-                  <Input type="text" className="shad-input" {...field} />
+                  <div className="relative">
+                    <img
+                      src="/assets/icons/email.svg"
+                      alt="email"
+                      width={22}
+                      height={22}
+                      className="absolute left-2 top-1/2 transform -translate-y-1/2"
+                    />
+                    <Input type="text" className="rounded-2xl pl-9 shadow-md text-gray-600 border-none" {...field} />
+                  </div>
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -134,30 +161,44 @@ const SignupForm = () => {
             name="password"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="shad-form_label">Contraseña</FormLabel>
+                <FormLabel className="text-gray-500">Contraseña</FormLabel>
                 <FormControl>
-                  <Input type="password" className="shad-input" {...field} />
+                  <div className="relative">
+                    <img
+                      src="/assets/icons/password.svg"
+                      alt="email"
+                      width={22}
+                      height={22}
+                      className="absolute left-2 top-1/2 transform -translate-y-1/2"
+                    />
+                    <Input
+                      type="password"
+                      className="rounded-2xl pl-9 shadow-md border-none text-gray-600"
+                      {...field}
+                    />
+                  </div>
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
+          <div className="flex justify-center">
+            <Button type="submit" className="rounded-xl shadow-md mt-10 w-1/2">
+              {isCreatingAccount || isSigningInUser || isUserLoading ? (
+                <div className="flex-center gap-2">
+                  <Loader /> Cargando...
+                </div>
+              ) : (
+                "Registrarse"
+              )}
+            </Button>
+          </div>
 
-          <Button type="submit" className="shad-button_primary">
-            {isCreatingAccount || isSigningInUser || isUserLoading ? (
-              <div className="flex-center gap-2">
-                <Loader /> Cargando...
-              </div>
-            ) : (
-              "Registrarse"
-            )}
-          </Button>
-
-          <p className="text-small-regular text-light-2 text-center mt-2">
+          <p className="text-small-regular text-gray-400 text-center mt-2">
             Ya tienes una cuenta?
             <Link
               to="/sign-in"
-              className="text-primary-500 text-small-semibold ml-1">
+              className="text-gray-600 font-medium ml-1">
               Ingresa
             </Link>
           </p>

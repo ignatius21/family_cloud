@@ -85,7 +85,7 @@ const SigninForm = () => {
                       alt="email"
                       width={22}
                       height={22}
-                      className="absolute left-1 top-1/2 transform -translate-y-1/2"
+                      className="absolute left-2 top-1/2 transform -translate-y-1/2"
                     />
                     <Input type="text" className="rounded-2xl pl-9 shadow-md text-gray-600 border-none" {...field} />
                   </div>
@@ -108,7 +108,7 @@ const SigninForm = () => {
                       alt="email"
                       width={22}
                       height={22}
-                      className="absolute left-1 top-1/2 transform -translate-y-1/2"
+                      className="absolute left-2 top-1/2 transform -translate-y-1/2"
                     />
                     <Input
                       type="password"
@@ -121,22 +121,23 @@ const SigninForm = () => {
               </FormItem>
             )}
           />
+          <div className="flex justify-center">
+            <Button type="submit" className="rounded-xl shadow-md mt-10 w-1/2">
+              {isLoading || isUserLoading ? (
+                <div className="flex-center gap-2">
+                  <Loader /> Cargando...
+                </div>
+              ) : (
+                "Ingresar"
+              )}
+            </Button>
+          </div>
 
-          <Button type="submit" className="shad-button_primary rounded-xl shadow-md">
-            {isLoading || isUserLoading ? (
-              <div className="flex-center gap-2">
-                <Loader /> Cargando...
-              </div>
-            ) : (
-              "Ingresar"
-            )}
-          </Button>
-
-          <p className="text-small-regular text-gray-500 text-center mt-2">
+          <p className="text-small-regular text-gray-400 text-center mt-2">
             No tienes una cuenta?
             <Link
               to="/sign-up"
-              className="text-primary-600 text-small-semibold ml-1">
+              className="text-gray-600 font-medium ml-1">
               Registrate
             </Link>
           </p>
