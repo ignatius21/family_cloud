@@ -3,13 +3,23 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import Loader from "@/components/shared/Loader";
 import { useToast } from "@/components/ui/use-toast";
 
-import { useCreateUserAccount, useSignInAccount } from "@/lib/react-query/queries";
+import {
+  useCreateUserAccount,
+  useSignInAccount,
+} from "@/lib/react-query/queries";
 import { SignupValidation } from "@/lib/validation";
 import { useUserContext } from "@/context/AuthContext";
 
@@ -29,8 +39,10 @@ const SignupForm = () => {
   });
 
   // Queries
-  const { mutateAsync: createUserAccount, isLoading: isCreatingAccount } = useCreateUserAccount();
-  const { mutateAsync: signInAccount, isLoading: isSigningInUser } = useSignInAccount();
+  const { mutateAsync: createUserAccount, isLoading: isCreatingAccount } =
+    useCreateUserAccount();
+  const { mutateAsync: signInAccount, isLoading: isSigningInUser } =
+    useSignInAccount();
 
   // Handler
   const handleSignup = async (user: z.infer<typeof SignupValidation>) => {
@@ -38,8 +50,8 @@ const SignupForm = () => {
       const newUser = await createUserAccount(user);
 
       if (!newUser) {
-        toast({ title: "El registro fallo, intenta nuevamente.", });
-        
+        toast({ title: "El registro fallo, intenta nuevamente." });
+
         return;
       }
 
@@ -49,10 +61,10 @@ const SignupForm = () => {
       });
 
       if (!session) {
-        toast({ title: "Algo salio mal, por favor inicia sesion nuevamente.", });
-        
+        toast({ title: "Algo salio mal, por favor inicia sesion nuevamente." });
+
         navigate("/sign-in");
-        
+
         return;
       }
 
@@ -63,8 +75,8 @@ const SignupForm = () => {
 
         navigate("/");
       } else {
-        toast({ title: "El registro fallo, intenta nuevamente.", });
-        
+        toast({ title: "El registro fallo, intenta nuevamente." });
+
         return;
       }
     } catch (error) {
@@ -75,14 +87,9 @@ const SignupForm = () => {
   return (
     <Form {...form}>
       <div className="sm:w-420 flex-center flex-col">
-        {/* <img src="/assets/images/logo.svg" alt="logo" /> */}
-
         <h2 className="h3-bold md:h2-bold mb-8 sm:pt-12 text-gray-600">
           Crea tu cuenta
         </h2>
-        {/* <p className="text-gray-500 small-medium md:base-regular mt-2">
-          Para usar CloudFamily necesitas una cuenta.
-        </p> */}
 
         <form
           onSubmit={form.handleSubmit(handleSignup)}
@@ -102,7 +109,11 @@ const SignupForm = () => {
                       height={22}
                       className="absolute left-2 top-1/2 transform -translate-y-1/2"
                     />
-                    <Input type="text" className="rounded-2xl pl-9 shadow-md text-gray-600 border-none" {...field} />
+                    <Input
+                      type="text"
+                      className="rounded-2xl pl-9 shadow-md text-gray-600 border-none"
+                      {...field}
+                    />
                   </div>
                 </FormControl>
                 <FormMessage />
@@ -125,7 +136,11 @@ const SignupForm = () => {
                       height={22}
                       className="absolute left-2 top-1/2 transform -translate-y-1/2"
                     />
-                    <Input type="text" className="rounded-2xl pl-9 shadow-md text-gray-600 border-none" {...field} />
+                    <Input
+                      type="text"
+                      className="rounded-2xl pl-9 shadow-md text-gray-600 border-none"
+                      {...field}
+                    />
                   </div>
                 </FormControl>
                 <FormMessage />
@@ -148,7 +163,11 @@ const SignupForm = () => {
                       height={22}
                       className="absolute left-2 top-1/2 transform -translate-y-1/2"
                     />
-                    <Input type="text" className="rounded-2xl pl-9 shadow-md text-gray-600 border-none" {...field} />
+                    <Input
+                      type="text"
+                      className="rounded-2xl pl-9 shadow-md text-gray-600 border-none"
+                      {...field}
+                    />
                   </div>
                 </FormControl>
                 <FormMessage />
@@ -196,9 +215,7 @@ const SignupForm = () => {
 
           <p className="text-small-regular text-gray-400 text-center mt-2">
             Ya tienes una cuenta?
-            <Link
-              to="/sign-in"
-              className="text-gray-600 font-medium ml-1">
+            <Link to="/sign-in" className="text-gray-600 font-medium ml-1">
               Ingresa
             </Link>
           </p>

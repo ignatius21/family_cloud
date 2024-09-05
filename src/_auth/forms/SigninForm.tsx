@@ -61,8 +61,6 @@ const SigninForm = () => {
   return (
     <Form {...form}>
       <div className="sm:w-420 flex-center flex-col">
-        {/* <img src="/assets/images/logoFC.png" alt="logo" width={120} height={22}/> */}
-
         <h2 className="h3-bold md:h2-bold pt-5 sm:pt-12 text-gray-600">
           <p className="text-gray-500 small-medium md:base-regular mt-2 text-center">
             Bienvenido 🖐
@@ -87,7 +85,11 @@ const SigninForm = () => {
                       height={22}
                       className="absolute left-2 top-1/2 transform -translate-y-1/2"
                     />
-                    <Input type="text" className="rounded-2xl pl-9 shadow-md text-gray-600 border-none" {...field} />
+                    <Input
+                      type="text"
+                      className="rounded-2xl pl-9 shadow-md text-gray-600 border-none"
+                      {...field}
+                    />
                   </div>
                 </FormControl>
                 <FormMessage />
@@ -135,9 +137,7 @@ const SigninForm = () => {
 
           <p className="text-small-regular text-gray-400 text-center mt-2">
             No tienes una cuenta?
-            <Link
-              to="/sign-up"
-              className="text-gray-600 font-medium ml-1">
+            <Link to="/sign-up" className="text-gray-600 font-medium ml-1">
               Registrate
             </Link>
           </p>
